@@ -11,16 +11,39 @@
         <div class="distance">投资者关系</div>
         <div class="fontConvert ">
           [
-          <div class="fontDistance">简单</div>
+          <div class="fontDistance" @click="lang('zh')">简单</div>
           <div class="fontDistance">繁体</div>
-          <div class="fontDistance">En</div>
+          <div class="fontDistance" @click="lang('en')">En</div>
           ]
         </div>
         <div class="distance">|</div>
         <div class="distance">公告信息披露</div>
         <div class="distance">|</div>
-        <div class="distance">关注人保</div>
+        <div class="AttentionPicc">
+          <div class="distance PiccContent">关注人保</div>
+          <div class="AttentionList">
+            <div class="AttentionListContent">
+              <div class="Picc-img">
+                <div><img src="../../../static/img/sss.png" alt="" /></div>
+                <div>官方微信关注</div>
+              </div>
+              <div class="Picc-img">
+                <div>
+                  <img src="../../../static/img/sss.png" alt="" />
+                  <div>官方微信关注</div>
+                </div>
+              </div>
+              <div class="Picc-img">
+                <div>
+                  <img src="../../../static/img/sss.png" alt="" />
+                  <div>官方微信关注</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
+      <!-- {{$t('basic.AllFields')}} -->
     </div>
   </div>
 </template>
@@ -34,6 +57,12 @@ export default {
   methods: {
     login(Trends) {
       this.$router.push({ name: "login", params: { Trends: Trends } });
+    },
+    lang(key) {
+      // key 传入‘zh’ 或者‘en’
+      this.language = key;
+      this.$i18n.locale = key;
+      window.localStorage.setItem("lang", this.language);
     }
   }
 };
@@ -86,6 +115,35 @@ export default {
         margin: 0 5px;
         &:hover {
           color: red;
+        }
+      }
+    }
+    .AttentionPicc {
+      position: relative;
+      &:hover {
+        .AttentionList {
+          display: block;
+        }
+      }
+      .AttentionList {
+        position: absolute;
+        right: 0;
+        top: 35px;
+        width: 400px;
+        height: 145px;
+        color: black;
+        // background: pink;
+        display: none;
+        .AttentionListContent {
+          display: flex;
+          justify-content: space-between;
+          .Picc-img{
+              text-align: center;
+              img{
+                  width: 100px;
+                  margin-top: 20px;
+              }
+          }
         }
       }
     }
