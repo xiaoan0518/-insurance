@@ -24,18 +24,18 @@
           <div class="AttentionList">
             <div class="AttentionListContent">
               <div class="Picc-img">
-                <div><img src="../../../static/img/sss.png" alt="" /></div>
+                <div><img src="../../../static/img/aw.jpg" alt="" /></div>
                 <div>官方微信关注</div>
               </div>
               <div class="Picc-img">
                 <div>
-                  <img src="../../../static/img/sss.png" alt="" />
+                  <img src="../../../static/img/aw.jpg" alt="" />
                   <div>官方微信关注</div>
                 </div>
               </div>
               <div class="Picc-img">
                 <div>
-                  <img src="../../../static/img/sss.png" alt="" />
+                  <img src="../../../static/img/aw.jpg" alt="" />
                   <div>官方微信关注</div>
                 </div>
               </div>
@@ -43,7 +43,7 @@
           </div>
         </div>
       </div>
-      <!-- {{$t('basic.AllFields')}} -->
+      {{$t('basic.AllFields')}}
     </div>
   </div>
 </template>
@@ -76,6 +76,7 @@ export default {
 .headerNav {
   width: 85%;
   min-width: 1000px;
+  background: pink;
   height: 35px;
   line-height: 35px;
   display: flex;
@@ -127,6 +128,7 @@ export default {
       }
       .AttentionList {
         position: absolute;
+        z-index: 999;
         right: 0;
         top: 35px;
         width: 400px;
