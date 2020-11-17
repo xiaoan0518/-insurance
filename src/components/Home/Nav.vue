@@ -57,7 +57,10 @@
                   >
                     <i class="el-icon-user icon"></i>
                     <span>个人中心</span>
-                    <i class="el-icon-caret-bottom icon" v-if="personagehovue"></i>
+                    <i
+                      class="el-icon-caret-bottom icon"
+                      v-if="personagehovue"
+                    ></i>
                     <i class="el-icon-caret-top" v-else></i>
                   </el-button></div
               ></el-col>
@@ -66,21 +69,25 @@
         </el-col>
       </el-row>
     </div>
-     <NAVTOPDRAWER/>
-   </div>
+    <div class="navtopdrawer">
+      <NAVTOPDRAWER :hoverindex="hoverindex" />
+    </div>
+    <div class="box"></div>
+  </div>
 </template>
 
 <script>
-import NAVTOPDRAWER from '../Drawer'
+import NAVTOPDRAWER from "../Drawer";
 export default {
-  components:{
+  components: {
     NAVTOPDRAWER
   },
   props: {},
   data() {
     return {
-      active: true,
+      hoverindex: null,
       btnsearch: true,
+
       btnsearchHover: false,
       personagehovue: false,
       navListActive: null,
@@ -96,10 +103,19 @@ export default {
   },
   methods: {
     streak(flag, index) {
+      var drawerhover = document.querySelector('.navtopdrawer')
       if (flag) {
+        if (index !==2 && index !== 0) {
+           drawerhover.className = 'navtopdrawer drawerhover'
+        }
+       
+       
+         this.hoverindex = index ;
         this.navListActive = index;
       } else {
         this.navListActive = null;
+        this.hoverindex = null;
+         drawerhover.className = 'navtopdrawer'
       }
     },
     btnSerch(flag) {
@@ -187,9 +203,24 @@ export default {
     .el-button {
       padding: 0;
     }
-    .bg-right {
-      // background: #d3dce6;
-    }
+  }
+  .navtopdrawer {
+    position: absolute;
+    background:#fff;
+    width: 100%;
+    height: 0px;
+    transition: height 55s;
+    -moz-transition: all 1s;
+    -webkit-transition: all 1s;
+    -o-transition: all 1s;
+  }
+  .drawerhover {
+    height: 300px;
+  }
+  .box{
+    width: 100%;
+    height: 500px;
+    background: gold;
   }
 }
 </style>
