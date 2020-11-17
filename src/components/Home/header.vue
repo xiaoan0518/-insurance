@@ -43,7 +43,7 @@
           </div>
         </div>
       </div>
-      {{$t('basic.AllFields')}}
+      <!-- {{$t('basic.AllFields')}} -->
     </div>
   </div>
 </template>
@@ -76,7 +76,7 @@ export default {
 .headerNav {
   width: 85%;
   min-width: 1000px;
-  background: pink;
+  // background: pink;
   height: 35px;
   line-height: 35px;
   display: flex;
