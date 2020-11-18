@@ -17,10 +17,10 @@
               <li
                 v-for="(item, index) in navs"
                 :key="index"
-                @mouseenter="streak(true, index)"
-                @mouseleave="streak(false, index)"
+                
               >
-                <span :class="{ navList: navListActive == index }">{{
+                <span :class="{ navList: navListActive == index }" @mouseenter="streak(true, index)"
+                @mouseleave="streak(false, index)">{{
                   item.nav
                 }}</span>
               </li>
@@ -37,7 +37,7 @@
                       btnsearch: btnsearch,
                       btnsearchHover: btnsearchHover
                     }"
-                    @mouseenter.native="btnSerch(true)"
+                    @mouseenter.native="btnSerch(true, 'search')"
                     @mouseleave.native="btnSerch(false)"
                   >
                     <i class="el-icon-search icon"></i>
@@ -45,8 +45,8 @@
                   </el-button>
                 </div></el-col
               >
-              <el-col :span="12"
-                ><div class="grid-content bg-right">
+              <el-col :span="6" class="btncontent"  style="padding-left:0"
+                ><div class="grid-content bg-right right-person">
                   <el-button
                     :class="{
                       btnsearch: btnsearch,
@@ -62,15 +62,23 @@
                       v-if="personagehovue"
                     ></i>
                     <i class="el-icon-caret-top" v-else></i>
-                  </el-button></div
-              ></el-col>
+                  </el-button>
+                  <div class="pulldown" v-if="ishowList">
+                    <div>我的订单</div>
+                    <div>我的保单</div>
+                    <div>我的保单</div>
+                    <div>我的保单</div>
+                    <div>我的保单</div>
+                  </div>
+                </div></el-col
+              >
             </el-row>
           </div>
         </el-col>
       </el-row>
     </div>
     <div class="navtopdrawer">
-      <NAVTOPDRAWER :hoverindex="hoverindex" />
+      <NAVTOPDRAWER :hoverindex="hoverindex" :searchHover="searchHover" />
     </div>
     <div class="box"></div>
   </div>
@@ -87,7 +95,8 @@ export default {
     return {
       hoverindex: null,
       btnsearch: true,
-
+      searchHover: null,
+      ishowList:false,
       btnsearchHover: false,
       personagehovue: false,
       navListActive: null,
@@ -103,33 +112,38 @@ export default {
   },
   methods: {
     streak(flag, index) {
-      var drawerhover = document.querySelector('.navtopdrawer')
+      var drawerhover = document.querySelector(".navtopdrawer");
       if (flag) {
-        if (index !==2 && index !== 0) {
-           drawerhover.className = 'navtopdrawer drawerhover'
+        if (index !== 2 && index !== 0) {
+          drawerhover.className = "navtopdrawer drawerhover";
         }
-       
-       
-         this.hoverindex = index ;
+        this.hoverindex = index;
         this.navListActive = index;
       } else {
         this.navListActive = null;
         this.hoverindex = null;
-         drawerhover.className = 'navtopdrawer'
+        drawerhover.className = "navtopdrawer";
       }
     },
-    btnSerch(flag) {
+    btnSerch(flag, search) {
+      var drawerhover = document.querySelector(".navtopdrawer");
       if (flag) {
         this.btnsearchHover = true;
+        this.searchHover = search;
+        drawerhover.className = "navtopdrawer drawerhover";
       } else {
         this.btnsearchHover = false;
+        drawerhover.className = "navtopdrawer";
+        this.searchHover = null;
       }
     },
     personage(flag) {
       if (flag) {
         this.personagehovue = true;
+        this.ishowList = true
       } else {
         this.personagehovue = false;
+         this.ishowList = false
       }
     }
   }
@@ -143,6 +157,10 @@ export default {
     width: 85%;
     min-width: 1000px;
     margin: 0 auto;
+    .btncontent {
+      // background: royalblue;
+      margin-left: 10px;
+    }
     .bg-purple {
       .img-logo {
         width: 163px;
@@ -151,7 +169,22 @@ export default {
     }
     .grid-content {
       border-radius: 4px;
-      min-height: 100px;
+    }
+    .btncontent{
+      
+      padding: 0;
+      position: relative;
+
+    }
+    .pulldown {
+      width: 113px;
+      line-height: 30px;
+      left: 0;
+      position: absolute;
+      background: #fff;
+      border: 1px solid#d7d7d7;
+      z-index: 99;
+      // background: royalblue;
     }
     .nav-uL {
       display: flex;
@@ -169,7 +202,9 @@ export default {
     }
     .right-Search {
       height: 100px;
-      line-height: 100px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       text-align: center;
       .btnsearch {
         width: 113px;
@@ -187,7 +222,7 @@ export default {
       .personagehovue {
         width: 113px;
         height: 40px;
-        border: 1px solid red;
+        border: 1px solid #d7d7d7;
         border-radius: 4px;
         font-size: 14px;
         cursor: pointer;
@@ -206,7 +241,7 @@ export default {
   }
   .navtopdrawer {
     position: absolute;
-    background:#fff;
+    background: #fff;
     width: 100%;
     height: 0px;
     transition: height 55s;
@@ -217,7 +252,7 @@ export default {
   .drawerhover {
     height: 300px;
   }
-  .box{
+  .box {
     width: 100%;
     height: 500px;
     background: gold;
