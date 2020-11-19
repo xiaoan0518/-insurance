@@ -5,6 +5,7 @@
      <!-- 导航 -->
      <NAV/>
      <SLIDESHOWSWIPER/>
+     xia
      
     </div>
 </template>

@@ -37,11 +37,19 @@ export default {
 .el-carousel__item:nth-child(2n + 1) {
   background: blue;
 }
+
+/*左右箭头的样式*/
+ button.el-carousel__arrow.el-carousel__arrow--left, button.el-carousel__arrow.el-carousel__arrow--right {
+  font-size: 12px;
+  height: 20px;
+  width: 20px;
+  display: none;
+ }
 // 导航样式
 .el-carousel__button {
   width: 60px;
   height: 9px;
-  background:red;
+  background: #9EABCA;
   opacity: 1;
   -webkit-transform: skew(-30deg);
   -moz-transform: skew(-30deg);
@@ -50,6 +58,7 @@ export default {
 
 }
 .el-carousel__indicator.is-active button{
-  background: #ffffff;
+  
+  background:red;
 }
 </style>
