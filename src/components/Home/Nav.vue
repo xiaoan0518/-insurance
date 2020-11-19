@@ -154,7 +154,7 @@ export default {
 .navWarp {
   width: 100%;
   .nav-content {
-    width: 85%;
+    width: 75%;
     min-width: 1000px;
     margin: 0 auto;
     .btncontent {

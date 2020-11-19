@@ -1,11 +1,11 @@
 <template>
-    <div>
+    <div class="HomeWarp">
      <!-- 头部 -->
      <HEADER/>
      <!-- 导航 -->
      <NAV/>
      <SLIDESHOWSWIPER/>
-     xia
+   
      
     </div>
 </template>

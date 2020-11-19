@@ -74,7 +74,7 @@ export default {
   background: #f5f5f5;
 }
 .headerNav {
-  width: 85%;
+  width: 75%;
   min-width: 1000px;
   // background: pink;
   height: 35px;
