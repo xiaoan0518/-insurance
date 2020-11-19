@@ -80,7 +80,7 @@
     <div class="navtopdrawer">
       <NAVTOPDRAWER :hoverindex="hoverindex" :searchHover="searchHover" />
     </div>
-    <div class="box"></div>
+    <!-- <div class="box"></div> -->
   </div>
 </template>
 
@@ -242,6 +242,7 @@ export default {
   .navtopdrawer {
     position: absolute;
     background: #fff;
+    z-index: 99;
     width: 100%;
     height: 0px;
     transition: height 55s;
@@ -252,10 +253,10 @@ export default {
   .drawerhover {
     height: 300px;
   }
-  .box {
-    width: 100%;
-    height: 500px;
-    background: gold;
-  }
+  // .box {
+  //   width: 100%;
+  //   height: 500px;
+  //   background: gold;
+  // }
 }
 </style>
