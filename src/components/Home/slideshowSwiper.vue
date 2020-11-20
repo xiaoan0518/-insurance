@@ -10,6 +10,7 @@
     </div>
     <div class="HomeContent">
      <CONTENTLIST/>
+     <TEXTLIST/>
     </div>
   </div>
 </template>
@@ -20,9 +21,11 @@ import lll from "../../assets/lll).jpg";
 import timg from "../../assets//timg.jpg";
 import ttt from "../../assets/ttt.jpg";
 import CONTENTLIST from "./HomeContent/contentlist";
+import TEXTLIST from './HomeContent/textLIst'
 export default {
   components: {
-    CONTENTLIST
+    CONTENTLIST,
+    TEXTLIST
   },
   props: {},
   data() {
@@ -73,8 +76,7 @@ button.el-carousel__arrow.el-carousel__arrow--right {
 .HomeContent {
   width: 80%;
   height: 100%;
-  min-width: 1000px;
-  
+  min-width: 1200px;
   margin: 0 auto;
 }
 </style>

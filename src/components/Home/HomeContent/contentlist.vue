@@ -75,12 +75,13 @@ export default {
 <style lang="less" scoped>
 .contentlistWarp {
   margin-top: 40px;
-
+ 
   width: 100%;
 }
 .UlList {
   display: flex;
-
+  justify-content: space-between;
+   
   width: 100%;
   //   background: pink;
   .listFonst {
@@ -108,7 +109,7 @@ export default {
     }
   }
   .liList {
-    width: 25%;
+    width: 21%;
     height: 283px;
     background: #ffffff;
     padding: 20px;
@@ -116,12 +117,12 @@ export default {
     -moz-transition: all 0.3s;
     -webkit-transition: all 0.3s;
     -o-transition: all 0.3s;
-    margin-right: 15px;
+    // margin-right: 15px;
     border-radius: 6px;
     &:hover {
       cursor: pointer;
       transform: translateY(-20px);
-      box-shadow: 0 0 20px rgb(251, 203, 194, 0.4);
+      box-shadow: 0px 0px 20px rgb(251, 203, 194, 0.4);
       .account {
         color: #ff2f17 !important;
       }
