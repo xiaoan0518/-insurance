@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="rightflexWarp">
     <div class="rightflex">
       <div class="rightflex-content">
         <div
@@ -66,8 +66,10 @@ export default {
 </script>
 
 <style lang="less" scoped>
+
 .rightflex {
-  position: absolute;
+  position: fixed;
+  
   width: 35px;
   right: 0;
   height: 100%;
@@ -92,17 +94,17 @@ export default {
   }
 }
 .selectHover {
-  position: absolute;
+  position:fixed ;
   width: 0;
   opacity: 0;
   height: 625px;
   background: green;
-  top: 40%;
+  top:10%;
   right: 35px;
-  margin-top: -20%;
+  // margin-top: -20%;
   color: red;
   z-index: 999;
-  transition: all 35s;
+  transition: height 35s;
   -moz-transition: all 1s;
   -webkit-transition: all 1s;
   -o-transition: all 1s;

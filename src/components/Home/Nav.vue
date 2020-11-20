@@ -154,6 +154,7 @@ export default {
 <style lang="less" scoped>
 .navWarp {
   width: 100%;
+  
   .nav-content {
     width: 75%;
     min-width: 1000px;
@@ -166,6 +167,7 @@ export default {
       .img-logo {
         width: 163px;
         height: 94px;
+        cursor: pointer;
       }
     }
     .grid-content {
