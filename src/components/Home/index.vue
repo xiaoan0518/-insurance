@@ -4,8 +4,8 @@
      <HEADER/>
      <!-- 导航 -->
      <NAV/>
-     <SLIDESHOWSWIPER/>
-   
+     <!-- <SLIDESHOWSWIPER/> -->
+    <router-view></router-view>
      
     </div>
 </template>

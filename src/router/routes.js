@@ -1,12 +1,29 @@
 import HOME from '../components/Home'
 import LOGIN from '../pages/login'
+import SLIDESHOWSWIPER from '../components/Home/slideshowSwiper.vue'
 import CONTACTCENTER from '../components/absoluteRightFlex/contactCenter'
-// import ALLPRODUCTS from '../components/absoluteRightFlex/allProducts/'
+import ALLPRODUCTS from '../components/absoluteRightFlex/allProducts/'
 export default [
   {
     path: '/home',
     name: 'home',
-    component: HOME
+    component: HOME,
+    children:[
+      {
+        path: 'slideshowswiper',
+        name: 'slideshowswiper',
+        component: SLIDESHOWSWIPER
+      },
+       {
+         path: 'allproducts',
+         name: 'allproducts',
+         component: ALLPRODUCTS
+       },
+       {
+         path: '/',
+         redirect: "slideshowswiper"
+       }
+    ]
   },
   {
     path: '/login/:Trends',
@@ -17,16 +34,12 @@ export default [
        Trends: route.params.Trends
      })
   },
+ 
   {
-    path: '/contactCenter',
-    name: 'contactCenter',
+    path: '/contactcenter',
+    name: 'contactcenter',
     component: CONTACTCENTER
   },
-  // {
-  //   path: '/allproducts',
-  //   name: 'allproducts',
-  //   component: ALLPRODUCTS
-  // },
   {
     path: '/',
     redirect: "HOME"

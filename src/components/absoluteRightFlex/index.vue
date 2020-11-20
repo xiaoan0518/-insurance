@@ -6,6 +6,7 @@
           <i :class="item.icon"></i><span>{{ item.name }}</span>
         </div>
       </div>
+      
     </div>
   </div>
 </template>
@@ -28,7 +29,7 @@ export default {
       if (index == 0) {
        this.$router.push('/contactcenter')
       }else if(index == 2){
-        // this.$router.push('/allproducts')
+        this.$router.push('/home/allproducts')
       }
     },
     selectService(index){
