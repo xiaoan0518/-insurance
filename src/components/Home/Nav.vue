@@ -8,6 +8,7 @@
               class="img-logo"
               src="//group.picccdn.cn/images/logo_20191205.jpg"
               alt=""
+              @click="$router.push('/home')"
             />
           </div>
         </el-col>
@@ -183,7 +184,7 @@ export default {
       position: absolute;
       background: #fff;
       border: 1px solid#d7d7d7;
-      z-index: 99;
+      z-index: 199;
       // background: royalblue;
     }
     .nav-uL {
