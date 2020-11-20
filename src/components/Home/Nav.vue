@@ -167,7 +167,6 @@ export default {
       .img-logo {
         width: 163px;
         height: 94px;
-        cursor: pointer;
       }
     }
     .grid-content {

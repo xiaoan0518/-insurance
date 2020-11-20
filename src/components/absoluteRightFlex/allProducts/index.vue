@@ -21,7 +21,7 @@ export default {
 <style lang="less"  scoped>
 .allProductsWarp{
     width: 100%;
-    height: 800px;
+    height: 500px;
     background: goldenrod;
 }
 </style>

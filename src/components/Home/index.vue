@@ -24,5 +24,7 @@ export default {
 </script>
 
 <style lang="less"  scoped>
-
+.HomeWarp{
+    background: #EDEEF3;
+}
 </style>

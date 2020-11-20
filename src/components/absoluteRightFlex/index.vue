@@ -98,7 +98,7 @@ export default {
   width: 0;
   opacity: 0;
   height: 625px;
-  background: green;
+  background: #ffffff;
   top:10%;
   right: 35px;
   // margin-top: -20%;

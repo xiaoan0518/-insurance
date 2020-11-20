@@ -8,6 +8,9 @@
         </el-carousel-item>
       </el-carousel>
     </div>
+    <div class="HomeContent">
+     <CONTENTLIST/>
+    </div>
   </div>
 </template>
 
@@ -16,7 +19,11 @@ import dd2 from "../../assets/dd2.png";
 import lll from "../../assets/lll).jpg";
 import timg from "../../assets//timg.jpg";
 import ttt from "../../assets/ttt.jpg";
+import CONTENTLIST from "./HomeContent/contentlist";
 export default {
+  components: {
+    CONTENTLIST
+  },
   props: {},
   data() {
     return {
@@ -27,6 +34,9 @@ export default {
 </script>
 
 <style lang="less">
+.block {
+  min-width: 1000px;
+}
 .el-carousel__item:nth-child(2n) {
   background-color: red;
   img {
@@ -39,26 +49,32 @@ export default {
 }
 
 /*左右箭头的样式*/
- button.el-carousel__arrow.el-carousel__arrow--left, button.el-carousel__arrow.el-carousel__arrow--right {
+button.el-carousel__arrow.el-carousel__arrow--left,
+button.el-carousel__arrow.el-carousel__arrow--right {
   font-size: 12px;
   height: 20px;
   width: 20px;
   display: none;
- }
+}
 // 导航样式
 .el-carousel__button {
   width: 60px;
   height: 9px;
-  background: #9EABCA;
+  background: #9eabca;
   opacity: 1;
   -webkit-transform: skew(-30deg);
   -moz-transform: skew(-30deg);
   -o-transform: skew(-30deg);
   transform: skew(-30deg);
-
 }
-.el-carousel__indicator.is-active button{
+.el-carousel__indicator.is-active button {
+  background: red;
+}
+.HomeContent {
+  width: 80%;
+  height: 100%;
+  min-width: 1000px;
   
-  background:red;
+  margin: 0 auto;
 }
 </style>
