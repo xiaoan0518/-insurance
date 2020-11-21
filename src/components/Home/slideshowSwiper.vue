@@ -12,6 +12,7 @@
      <CONTENTLIST/>
      <TEXTLIST/>
      <PRODUCT/>
+     <FOOTER/>
     </div>
   </div>
 </template>
@@ -24,11 +25,13 @@ import ttt from "../../assets/ttt.jpg";
 import CONTENTLIST from "./HomeContent/contentlist";
 import TEXTLIST from './HomeContent/textLIst'
 import PRODUCT from './HomeContent/product'
+import FOOTER from './footer'
 export default {
   components: {
     CONTENTLIST,
     TEXTLIST,
-    PRODUCT
+    PRODUCT,
+    FOOTER
   },
   props: {},
   data() {
