@@ -11,6 +11,7 @@
     <div class="HomeContent">
      <CONTENTLIST/>
      <TEXTLIST/>
+     <PRODUCT/>
     </div>
   </div>
 </template>
@@ -22,10 +23,12 @@ import timg from "../../assets//timg.jpg";
 import ttt from "../../assets/ttt.jpg";
 import CONTENTLIST from "./HomeContent/contentlist";
 import TEXTLIST from './HomeContent/textLIst'
+import PRODUCT from './HomeContent/product'
 export default {
   components: {
     CONTENTLIST,
-    TEXTLIST
+    TEXTLIST,
+    PRODUCT
   },
   props: {},
   data() {
